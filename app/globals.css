@@ -32,19 +32,19 @@
 
 :root {
   /* Surfaces (light) */
-  --color-bg: #faf9f6;
-  --color-surface: #ffffff;
-  --color-surface-elevated: #f5f3ee;
-  --color-overlay: rgba(28, 26, 22, 0.42);
+  --color-bg: #f4ecd8;
+  --color-surface: #fffbf2;
+  --color-surface-elevated: #fffdf7;
+  --color-overlay: rgba(11, 19, 32, 0.42);
 
   /* Text (light) */
-  --color-text: #1c1a16;
-  --color-text-muted: #5d594f;
-  --color-text-subtle: #7d786c;
+  --color-text: #0b1320;
+  --color-text-muted: #3c4452;
+  --color-text-subtle: #5c6472;
 
   /* Borders (light) */
-  --color-border: #e7e3da;
-  --color-border-strong: #d2cdbf;
+  --color-border: #e3d6bc;
+  --color-border-strong: #bda97f;
 
   /* Accent — Sage (11 stops) */
   --color-accent-50: #f3f6f1;
@@ -64,17 +64,17 @@
   --color-accent-hover: var(--color-accent-700);
 
   /* Neutrals — greige (11 stops, light) */
-  --color-neutral-50: #faf9f6;
-  --color-neutral-100: #f3f1ec;
-  --color-neutral-200: #e7e3da;
-  --color-neutral-300: #d2cdbf;
-  --color-neutral-400: #a9a395;
-  --color-neutral-500: #7d786c;
-  --color-neutral-600: #5d594f;
-  --color-neutral-700: #46433b;
-  --color-neutral-800: #2e2c26;
-  --color-neutral-900: #1c1a16;
-  --color-neutral-950: #0e0d0a;
+  --color-neutral-50: #fffbf2;
+  --color-neutral-100: #f4ecd8;
+  --color-neutral-200: #e3d6bc;
+  --color-neutral-300: #cdbb95;
+  --color-neutral-400: #8a8372;
+  --color-neutral-500: #5c6472;
+  --color-neutral-600: #3c4452;
+  --color-neutral-700: #2a3342;
+  --color-neutral-800: #1a2332;
+  --color-neutral-900: #0b1320;
+  --color-neutral-950: #060b14;
 
   /* States (light) */
   --color-success: #5a8a5f;
@@ -263,30 +263,30 @@
    (lib/branding/css.ts), que só ganha consumidor com a tela de marca.
    ───────────────────────────────────────────────────────────────────────── */
 [data-theme="light"] {
-  --color-bg: #faf9f6;
-  --color-surface: #ffffff;
-  --color-surface-elevated: #f5f3ee;
-  --color-overlay: rgba(28, 26, 22, 0.42);
-  --color-text: #1c1a16;
-  --color-text-muted: #5d594f;
-  --color-text-subtle: #7d786c;
-  --color-border: #e7e3da;
-  --color-border-strong: #d2cdbf;
+  --color-bg: #f4ecd8;
+  --color-surface: #fffbf2;
+  --color-surface-elevated: #fffdf7;
+  --color-overlay: rgba(11, 19, 32, 0.42);
+  --color-text: #0b1320;
+  --color-text-muted: #3c4452;
+  --color-text-subtle: #5c6472;
+  --color-border: #e3d6bc;
+  --color-border-strong: #bda97f;
   --color-accent: var(--color-accent-600);
   --color-accent-fg: #ffffff;
   --color-accent-soft: var(--color-accent-100);
   --color-accent-hover: var(--color-accent-700);
-  --color-neutral-50: #faf9f6;
-  --color-neutral-100: #f3f1ec;
-  --color-neutral-200: #e7e3da;
-  --color-neutral-300: #d2cdbf;
-  --color-neutral-400: #a9a395;
-  --color-neutral-500: #7d786c;
-  --color-neutral-600: #5d594f;
-  --color-neutral-700: #46433b;
-  --color-neutral-800: #2e2c26;
-  --color-neutral-900: #1c1a16;
-  --color-neutral-950: #0e0d0a;
+  --color-neutral-50: #fffbf2;
+  --color-neutral-100: #f4ecd8;
+  --color-neutral-200: #e3d6bc;
+  --color-neutral-300: #cdbb95;
+  --color-neutral-400: #8a8372;
+  --color-neutral-500: #5c6472;
+  --color-neutral-600: #3c4452;
+  --color-neutral-700: #2a3342;
+  --color-neutral-800: #1a2332;
+  --color-neutral-900: #0b1320;
+  --color-neutral-950: #060b14;
   --color-success: #5a8a5f;
   --color-success-bg: rgba(90, 138, 95, 0.12);
   --color-success-fg: #41673f;
@@ -546,7 +546,9 @@
 
   /* Tipografia */
   --font-sans:
-    var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    var(--font-dm-sans), var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display:
+    var(--font-archivo), var(--font-dm-sans), var(--font-atkinson), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
   /* Espaçamento. Os valores são px LITERAIS (`--space-6` = 24px), não rem — e
@@ -783,6 +785,7 @@
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family:
+      var(--font-dm-sans),
       var(--font-atkinson),
       ui-sans-serif,
       system-ui,
@@ -799,6 +802,13 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+  }
+
+  /* Titulos da marca holospace: Archivo. O corpo segue em DM Sans (ver --font-sans). */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
   }
 
   code,

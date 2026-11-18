@@ -50,6 +50,23 @@ const atkinson = localFont({
   variable: "--font-atkinson",
 });
 
+// Marca holospace: DM Sans no corpo e Archivo nos titulos (variaveis, so latin).
+const dmSans = localFont({
+  src: "./fonts/dm-sans-100-1000-latin.woff2",
+  weight: "100 1000",
+  style: "normal",
+  display: "swap",
+  variable: "--font-dm-sans",
+});
+
+const archivo = localFont({
+  src: "./fonts/archivo-100-900-latin.woff2",
+  weight: "100 900",
+  style: "normal",
+  display: "swap",
+  variable: "--font-archivo",
+});
+
 const plexMono = localFont({
   src: [
     { path: "./fonts/ibm-plex-mono-400-latin-latin-ext.woff2", weight: "400", style: "normal" },
@@ -337,7 +354,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       lang="es"
       data-theme="light"
       suppressHydrationWarning
-      className={`${atkinson.variable} ${plexMono.variable}`}
+      className={`${atkinson.variable} ${dmSans.variable} ${archivo.variable} ${plexMono.variable}`}
     >
       <head>
         {/* Primeiro de tudo: a cor da instalação, antes do CSS e do script de tema. */}

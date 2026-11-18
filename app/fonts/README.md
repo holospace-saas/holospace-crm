@@ -21,6 +21,8 @@ que o `next/font/google` baixava.
 | `source-serif-4-200-900-latin.woff2` | Source Serif 4 | variável 200–900 | latin | `sourceserif4/v14` |
 | `ibm-plex-sans-300-700-latin.woff2` | IBM Plex Sans | variável, usada em 300–700 | latin | `ibmplexsans/v23` |
 | `jetbrains-mono-100-800-latin.woff2` | JetBrains Mono | variável 100–800 | latin | `jetbrainsmono/v24` |
+| `dm-sans-100-1000-latin.woff2` | DM Sans | variável 100–1000 | latin | `dmsans/v17` (marca holospace, corpo) |
+| `archivo-100-900-latin.woff2` | Archivo | variável 100–900 | latin | `archivo/v25` (marca holospace, títulos) |
 
 ## Como baixar de novo
 

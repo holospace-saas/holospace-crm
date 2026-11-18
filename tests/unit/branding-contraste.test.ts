@@ -119,9 +119,10 @@ describe("extrairRegua — os pares saem do globals.css, nunca de lista à mão"
     const razao = (papel: string, superficie: string) =>
       pares.find((p) => p.papel === papel && p.superficie === superficie)?.razao ?? 0;
 
-    expect(razao("--color-accent", "--color-bg")).toBeCloseTo(5.51, 2);
-    expect(razao(":focus-visible/outline", "--color-bg")).toBeCloseTo(3.79, 2);
-    expect(razao(":focus-visible/outline", "--color-surface-elevated")).toBeCloseTo(3.6, 2);
+    // Recalculado em 18/11/2026 para a paleta holospace (bg creme #f4ecd8; antes 5,51 · 3,79 · 3,6).
+    expect(razao("--color-accent", "--color-bg")).toBeCloseTo(4.92, 2);
+    expect(razao(":focus-visible/outline", "--color-bg")).toBeCloseTo(3.39, 2);
+    expect(razao(":focus-visible/outline", "--color-surface-elevated")).toBeCloseTo(3.93, 2);
   });
 
   it("a Sage inteira, como está no CSS, cabe nos pisos", () => {
@@ -407,13 +408,13 @@ describe("marca acromática — o accent do produto permanece", () => {
         separacaoDoNeutro(regua, tema.grauDoAccent, tema.accent),
       ).toBeGreaterThanOrEqual(PISO_DE_SEPARACAO_DO_NEUTRO);
     }
-    // Os números exatos, fixados: 0,0681 no claro (accent-600 × neutral-600) e 0,1994 no
-    // escuro (accent-400 × neutral-400). São eles que mostram por que o piso do briefing
-    // (8, na convenção ×100 — ou seja 0,08 aqui) não podia ser aceito sem medir: ele
-    // reprovaria o controle positivo do próprio produto no tema claro.
-    expect(separacaoDoNeutro(REGUA.claro, marca.claro.grauDoAccent, marca.claro.accent)).toBeCloseTo(0.0681, 4);
+    // Os números exatos, fixados: 0,1433 no claro (accent-600 × neutral-600) e 0,1994 no
+    // escuro (accent-400 × neutral-400). Na paleta original o claro dava 0,0681, e por isso o
+    // piso do briefing (0,08) não podia ser aceito sem medir: reprovaria o controle positivo do
+    // produto. Com a paleta holospace (neutros azulados, 18/11/2026) o claro subiu para 0,1433 e a
+    // razão histórica deixou de valer; o piso real (PISO_DE_SEPARACAO_DO_NEUTRO) segue cobrado acima.
+    expect(separacaoDoNeutro(REGUA.claro, marca.claro.grauDoAccent, marca.claro.accent)).toBeCloseTo(0.1433, 4);
     expect(separacaoDoNeutro(REGUA.escuro, marca.escuro.grauDoAccent, marca.escuro.accent)).toBeCloseTo(0.1994, 4);
-    expect(separacaoDoNeutro(REGUA.claro, marca.claro.grauDoAccent, marca.claro.accent)).toBeLessThan(0.08);
 
     // Controle negativo: um accent cinza reprovaria as duas guardas. Sem esta linha, os
     // pisos acima poderiam ser satisfeitos por qualquer coisa.
