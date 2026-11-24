@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { Kanban } from "@/lib/ui/icons";
@@ -7,9 +6,10 @@ import { ROLE_RANK } from "@/lib/auth/types";
 import { createClient } from "@/lib/supabase/server";
 import { traduzir } from "@/lib/i18n/dicionario";
 import { FunisClient, type FunilDaLista } from "./_client";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Funis" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Funis"));
 
 /**
  * A lista de funis — e o lugar onde eles se gerenciam.

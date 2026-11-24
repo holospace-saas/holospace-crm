@@ -10,7 +10,6 @@
  * nome da tela do aviso de CASO, e dois destinos com o mesmo nome na busca da
  * navegação não dizem qual é qual.
  */
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { requireAuth, resolveActiveOrg } from "@/lib/auth/server";
@@ -18,9 +17,10 @@ import { ROLE_RANK } from "@/lib/auth/types";
 import { traduzir } from "@/lib/i18n/dicionario";
 
 import { AvisoDeAgendamento } from "./_components/AvisoDeAgendamento";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Aviso de agendamento" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Aviso de agendamento"));
 
 export default async function AvisoDeAgendamentoPage() {
   const user = await requireAuth();

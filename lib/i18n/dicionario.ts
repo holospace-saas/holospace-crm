@@ -19264,6 +19264,27 @@ export const DICIONARIO: Traducoes = {
   "Uma proposta venceu sem decisão": { es: "Una propuesta venció sin decisión" },
   "A taxa de aceite de propostas caiu": { es: "La tasa de aceptación de propuestas bajó" },
   "Uma proposta prometida não foi criada": { es: "Una propuesta prometida no fue creada" },
+  // Títulos de aba das telas logadas (`tituloDaTelaDoApp`), 24/11/2026.
+  "Cadastro na instalação": { es: "Registro en la instalación" },
+  "Cobrança — Admin Plataforma": { es: "Cobranza — Admin de plataforma" },
+  "Dashboard — Admin Plataforma": { es: "Panel — Admin de plataforma" },
+  "Servidor de e-mail da instalação": { es: "Servidor de correo de la instalación" },
+  "Google Agenda da instalação": { es: "Google Calendar de la instalación" },
+  "Detalhe do Incidente — Admin Plataforma": { es: "Detalle del incidente — Admin de plataforma" },
+  "Incidentes — Admin Plataforma": { es: "Incidentes — Admin de plataforma" },
+  "Marca da instalação": { es: "Marca de la instalación" },
+  "API Oficial da Meta da instalação": { es: "API oficial de Meta de la instalación" },
+  "Platform Admins — Admin Plataforma": { es: "Administradores de plataforma — Admin de plataforma" },
+  "Novo Tenant — Admin Plataforma": { es: "Nueva empresa — Admin de plataforma" },
+  "Tenants — Admin Plataforma": { es: "Empresas — Admin de plataforma" },
+  "Uso & Custo — Admin Plataforma": { es: "Uso y costo — Admin de plataforma" },
+  "Detalhe de Usuário — Admin Plataforma": { es: "Detalle de usuario — Admin de plataforma" },
+  "Usuários — Admin Plataforma": { es: "Usuarios — Admin de plataforma" },
+  "Acesso negado — Admin Plataforma": { es: "Acceso denegado — Admin de plataforma" },
+  "Guia da extensão": { es: "Guía de la extensión" },
+  "Editor de Proposta": { es: "Editor de propuesta" },
+  "Nova Proposta": { es: "Nueva propuesta" },
+  "Modelo de proposta": { es: "Modelo de propuesta" },
 };
 
 /**

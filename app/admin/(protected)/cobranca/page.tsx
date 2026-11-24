@@ -19,8 +19,9 @@ import { ConexaoDaCobranca } from "./_conexao";
 import { PlanosDaInstalacao, type PlanoDaTela } from "./_planos";
 import { ReguaDaCobranca } from "./_regua";
 import { FaixaDoModoDeTeste, VisaoGeral } from "./_visao-geral";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Cobrança — Admin Plataforma" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Cobrança — Admin Plataforma"));
 export const dynamic = "force-dynamic";
 
 interface ClienteDaTela {

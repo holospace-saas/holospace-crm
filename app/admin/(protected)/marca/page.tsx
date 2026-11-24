@@ -21,8 +21,9 @@ import { normalizarIdioma } from "@/lib/i18n/idiomas";
 import { traduzir } from "@/lib/i18n/dicionario";
 
 import { FormularioDaMarca } from "./_form";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Marca da instalação" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Marca da instalação"));
 export const dynamic = "force-dynamic";
 
 /**
@@ -68,7 +69,7 @@ function instanteLegivel(iso: string | null, idioma: string): string | null {
 export default async function Page() {
   const usuario = await loadAuthUser();
   if (!usuario?.is_platform_admin) notFound();
-  const idioma = normalizarIdioma(usuario.locale);
+  const idioma = usuario.idioma;
 
   const [linha, cssPersonalizado, temasInstalados, temaEscolhido] = await Promise.all([
     marcaDaInstalacao(),

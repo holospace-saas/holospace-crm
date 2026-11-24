@@ -8,8 +8,9 @@ import { traduzir } from "@/lib/i18n/dicionario";
 
 import { FormularioDeCadastro } from "./_form";
 import { PedidosPendentes } from "./_pedidos";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Cadastro na instalação" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Cadastro na instalação"));
 export const dynamic = "force-dynamic";
 
 /**

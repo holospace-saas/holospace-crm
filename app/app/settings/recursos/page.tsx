@@ -29,9 +29,10 @@ import {
 } from "@/lib/recursos-opcionais/catalogo";
 import { fontesDaEmpresa } from "@/lib/recursos-opcionais/estado";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Recursos opcionais" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Recursos opcionais"));
 
 const PAPEL_QUE_DECIDE: Record<Exclude<RecursoOpcional["quemDecide"], "dono_do_servidor">, Role> = {
   admin: "admin",

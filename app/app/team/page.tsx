@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 
 import { requireAuth, resolveActiveOrg } from "@/lib/auth/server";
@@ -13,9 +12,10 @@ import { SectorsClient } from "./_components/SectorsClient";
 import { fusoUtilizavel } from "@/lib/tempo/fusos";
 import { moduloLigado } from "@/lib/instalacao/modulos";
 import { createAdminClient } from "@/lib/supabase/admin";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Equipe" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Equipe"));
 
 /**
  * As abas são endereçáveis, e isso não é conveniência.

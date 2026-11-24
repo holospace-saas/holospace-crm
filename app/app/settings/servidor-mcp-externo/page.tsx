@@ -3,9 +3,10 @@ import { redirect } from "next/navigation";
 import { exigirProvaDeMfa, mfaEmDividaEstrita, requireAuth } from "@/lib/auth/server";
 import { traduzir } from "@/lib/i18n/dicionario";
 import { CadastroDoServidorMcpExterno } from "./_components/CadastroDoServidorMcpExterno";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata = { title: "Servidor MCP externo" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Servidor MCP externo"));
 
 /**
  * A tela do servidor MCP externo da empresa (#2948).
