@@ -19285,6 +19285,28 @@ export const DICIONARIO: Traducoes = {
   "Editor de Proposta": { es: "Editor de propuesta" },
   "Nova Proposta": { es: "Nueva propuesta" },
   "Modelo de proposta": { es: "Modelo de propuesta" },
+  // Etiquetas de actividad y títulos fijos de avisos que faltaban (24/11/2026).
+  "o humano viu e disse não": { es: "la persona lo vio y dijo que no" },
+  "Agendamento marcado": { es: "Cita agendada" },
+  "Agendamento remarcado": { es: "Cita reprogramada" },
+  "Agendamento cancelado": { es: "Cita cancelada" },
+  "Agendamento realizado": { es: "Cita realizada" },
+  "Liberou": { es: "Liberó" },
+  "Chamada de voz perdida": { es: "Llamada de voz perdida" },
+  "Tarefa combinada": { es: "Tarea acordada" },
+  "Tarefa concluída": { es: "Tarea completada" },
+  "Plano de tarefas aplicado": { es: "Plan de tareas aplicado" },
+  "Mesclado": { es: "Fusionado" },
+  "Contatos duplicados juntados": { es: "Contactos duplicados unidos" },
+  "Rascunho de proposta criado": { es: "Borrador de propuesta creado" },
+  "Proposta aceita": { es: "Propuesta aceptada" },
+  "Proposta recusada": { es: "Propuesta rechazada" },
+  "Proposta venceu sem decisão": { es: "La propuesta venció sin decisión" },
+  "Valor do negócio atualizado pela proposta": { es: "Valor del negocio actualizado por la propuesta" },
+  "Follow-up automático não agendado": { es: "Seguimiento automático no programado" },
+  "Marcado como pessoal": { es: "Marcado como personal" },
+  "Desmarcado como pessoal": { es: "Desmarcado como personal" },
+  "Documento anexado ao negócio": { es: "Documento adjunto al negocio" },
 };
 
 /**

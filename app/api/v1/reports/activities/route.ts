@@ -30,6 +30,7 @@ import { z } from "zod";
 import { fail, ok } from "@/lib/api/wrappers";
 import { isServiceRoleConfigured } from "@/lib/audit";
 import { requireRole } from "@/lib/auth/require-role";
+import { traduzir } from "@/lib/i18n/dicionario";
 import type { PipelineVocabulary } from "@/lib/kanban/types";
 import {
   fusoValido,
@@ -77,7 +78,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   // papel. Um piso mais alto esconderia da pessoa as atividades dela mesma.
   const authz = await requireRole("viewer", { requestId, resource: "reports" });
   if (!authz.ok) return authz.response;
-  const { org: activeOrg } = authz;
+  const { org: activeOrg, user } = authz;
 
   const url = new URL(req.url);
   const parsed = querySchema.safeParse({
@@ -126,6 +127,8 @@ export async function GET(req: NextRequest): Promise<Response> {
     .maybeSingle();
 
   const relatorio = montarRelatorio(bruto, {
+    // Sem `t` o relatório devolve os rótulos no idioma do código (português): a rota nunca o passava.
+    t: (texto: string) => traduzir(texto, user.idioma),
     nomes,
     vocabulary: (funil?.vocabulary ?? null) as PipelineVocabulary | null,
   });
