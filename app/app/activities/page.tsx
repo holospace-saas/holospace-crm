@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { requireAuth } from "@/lib/auth/server";
 import { traduzir } from "@/lib/i18n/dicionario";
 
 import { Relatorios } from "./_components/Relatorios";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Atividades" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Atividades"));
 
 /**
  * As duas abas são endereçáveis, como em `/app/team`: quem mandar o link da

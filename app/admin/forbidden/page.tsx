@@ -5,8 +5,9 @@ import { createClient } from "@/lib/supabase/server";
 import { IdiomaProvider } from "@/lib/i18n/IdiomaProvider";
 import { normalizarIdioma } from "@/lib/i18n/idiomas";
 import { traduzir } from "@/lib/i18n/dicionario";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Acesso negado — Admin Plataforma" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Acesso negado — Admin Plataforma"));
 
 export default async function AdminForbiddenPage() {
   // Página sem `requirePlatformAdmin()` (é o próprio destino do redirect dele)

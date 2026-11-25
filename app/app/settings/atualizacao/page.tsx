@@ -2,8 +2,9 @@ import { notFound } from "next/navigation";
 
 import { exigirProvaDeMfa, loadAuthUser, mfaEmDividaEstrita } from "@/lib/auth/server";
 import { UpdatePanel } from "./_components/UpdatePanel";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Atualização do sistema" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Atualização do sistema"));
 export const dynamic = "force-dynamic";
 
 /**

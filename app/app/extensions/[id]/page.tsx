@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { ExtensionGuide } from "@/components/extensions/ExtensionGuide";
 import { requireAuth, resolveActiveOrg } from "@/lib/auth/server";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Guia da extensão" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Guia da extensão"));
 
 export default async function ExtensionGuidePage({
   params,

@@ -1,6 +1,7 @@
 import { UserDetailClient } from "./_client";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Detalhe de Usuário — Admin Plataforma" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Detalhe de Usuário — Admin Plataforma"));
 
 export default async function AdminUserDetailPage({
   params,

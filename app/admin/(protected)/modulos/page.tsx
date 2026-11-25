@@ -5,8 +5,9 @@ import { loadAuthUser } from "@/lib/auth/server";
 import { traduzir } from "@/lib/i18n/dicionario";
 import { normalizarIdioma } from "@/lib/i18n/idiomas";
 import { listarModulos } from "@/lib/modulos/service";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Módulos da instalação" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Módulos da instalação"));
 export const dynamic = "force-dynamic";
 
 /**
@@ -21,7 +22,7 @@ export const dynamic = "force-dynamic";
 export default async function Page() {
   const usuario = await loadAuthUser();
   if (!usuario?.is_platform_admin) notFound();
-  const idioma = normalizarIdioma(usuario.locale);
+  const idioma = usuario.idioma;
   const t = (s: string) => traduzir(s, idioma);
 
   const modulos = await listarModulos();

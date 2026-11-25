@@ -279,7 +279,8 @@ export function montarRelatorio(
     quando: i.performed_at,
     atorNome: nomeDoAtor(i.actor_kind, i.user_id, i.agent_id),
     atorForma: actorShape(i.actor_kind),
-    motivo: i.reason,
+    // O motivo é gravado em português pelos workers; as frases fixas têm entrada no dicionário, as que levam dados passam como vieram.
+    motivo: i.reason ? t(i.reason) : i.reason,
     negocioId: i.lead_id,
     negocioTitulo: i.lead_title,
     contatoId: i.contact_id,

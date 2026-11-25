@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 import { requireAuth, resolveActiveOrg } from "@/lib/auth/server";
 import { ROLE_RANK } from "@/lib/auth/types";
 import { traduzir } from "@/lib/i18n/dicionario";
 import { WebhooksClient, type AbaDosWebhooks } from "./_components/WebhooksClient";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 const ABAS: ReadonlyArray<AbaDosWebhooks> = ["receber", "leads", "automacoes", "atividade"];
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Webhooks" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Webhooks"));
 
 export default async function WebhooksPage({
   searchParams,

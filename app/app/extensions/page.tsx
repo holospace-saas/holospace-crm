@@ -1,11 +1,11 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { ExtensionsManager } from "@/components/extensions/ExtensionsManager";
 import { exigirProvaDeMfa, mfaEmDividaEstrita, requireAuth, resolveActiveOrg } from "@/lib/auth/server";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Extensões" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Extensões"));
 
 export default async function ExtensionsPage() {
   const user = await requireAuth();

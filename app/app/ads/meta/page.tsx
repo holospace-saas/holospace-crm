@@ -27,8 +27,9 @@ import { existeConexaoDeLeitura } from "@/lib/plataformas-de-anuncio/credenciais
 import { createAdminClient } from "@/lib/supabase/admin";
 
 import { MetaAdsClient } from "./_components/MetaAdsClient";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Meta Ads" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Meta Ads"));
 export const dynamic = "force-dynamic";
 
 export default async function MetaAdsPage() {

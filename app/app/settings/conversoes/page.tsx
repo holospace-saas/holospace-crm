@@ -83,8 +83,9 @@ import { RegrasDeConversaoGoogle, type EtapaAberta } from "./_regrasGoogle";
 import { listarRegrasGoogle } from "@/lib/conversoes/regras-google";
 import { RegrasDeConversaoMeta } from "./_regrasMeta";
 import { listarRegrasMeta } from "@/lib/conversoes/regras-meta";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Conversões" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Conversões"));
 export const dynamic = "force-dynamic";
 
 /** O que a volta do OAuth do Google Ads diz, traduzido — ver o callback. */

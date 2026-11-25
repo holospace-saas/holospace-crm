@@ -1,6 +1,7 @@
 import { IncidentDetailClient } from "./_client";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Detalhe do Incidente — Admin Plataforma" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Detalhe do Incidente — Admin Plataforma"));
 
 export default async function AdminIncidentDetailPage({
   params,

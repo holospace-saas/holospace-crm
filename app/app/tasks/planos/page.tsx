@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
 
 import { PlanosDeTarefa } from "./_client";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Planos de tarefa" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Planos de tarefa"));
 
 export default function PaginaDePlanosDeTarefa() {
   return <PlanosDeTarefa />;

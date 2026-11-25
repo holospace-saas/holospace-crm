@@ -47,7 +47,7 @@ export default async function NuvemshopIntegrationPage() {
   const user = await loadAuthUser();
   const activeOrg = user ? await resolveActiveOrg(user) : null;
   const configured = isConfigured();
-  const idioma = normalizarIdioma(user?.locale ?? null);
+  const idioma = (user?.idioma ?? normalizarIdioma(null));
 
   const integration =
     activeOrg && configured ? await loadIntegration(activeOrg.orgId) : null;

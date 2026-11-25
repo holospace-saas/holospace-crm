@@ -42,15 +42,15 @@ export const REGUA_DO_PRODUTO: Regua = {
     base: [
       {
         chave: "--color-bg",
-        hex: "#faf9f6",
+        hex: "#f4ecd8",
       },
       {
         chave: "--color-surface",
-        hex: "#ffffff",
+        hex: "#fffbf2",
       },
       {
         chave: "--color-surface-elevated",
-        hex: "#f5f3ee",
+        hex: "#fffdf7",
       },
     ],
     tingidas: [
@@ -159,17 +159,17 @@ export const REGUA_DO_PRODUTO: Regua = {
       },
     ],
     neutros: [
-      "#faf9f6",
-      "#f3f1ec",
-      "#e7e3da",
-      "#d2cdbf",
-      "#a9a395",
-      "#7d786c",
-      "#5d594f",
-      "#46433b",
-      "#2e2c26",
-      "#1c1a16",
-      "#0e0d0a",
+      "#fffbf2",
+      "#f4ecd8",
+      "#e3d6bc",
+      "#cdbb95",
+      "#8a8372",
+      "#5c6472",
+      "#3c4452",
+      "#2a3342",
+      "#1a2332",
+      "#0b1320",
+      "#060b14",
     ],
     indices: {
       accent: 6,
@@ -319,4 +319,4 @@ export const REGUA_DO_PRODUTO: Regua = {
     },
     alfaDoSoft: 0.16,
   },
-} as const;
+};

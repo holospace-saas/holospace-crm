@@ -1,13 +1,13 @@
-import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { requireAuth, resolveActiveOrg } from "@/lib/auth/server";
 import { roleAtLeast } from "@/lib/auth/types";
 
 import { ProposalsClient } from "./_client";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Propostas" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Propostas"));
 
 export default async function ProposalsPage() {
   const user = await requireAuth();

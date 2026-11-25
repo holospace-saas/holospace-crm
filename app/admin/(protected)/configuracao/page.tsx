@@ -11,8 +11,9 @@ import { normalizarIdioma } from "@/lib/i18n/idiomas";
 import { traduzir } from "@/lib/i18n/dicionario";
 
 import { PainelDeConfiguracao } from "./_form";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Configuração da instalação" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Configuração da instalação"));
 export const dynamic = "force-dynamic";
 
 /**
@@ -65,7 +66,7 @@ export default async function Page() {
   // própria página aplica. `notFound()` e não 403 — para quem não administra a
   // instalação, esta tela não faz parte do produto.
   if (!usuario?.is_platform_admin) notFound();
-  const idioma = normalizarIdioma(usuario.locale);
+  const idioma = usuario.idioma;
 
   // Uma ida ao banco por chave, em paralelo. Sem cache de propósito — ver o
   // cabeçalho de `lib/instalacao/config.ts`: com memo, a tela mostraria o valor

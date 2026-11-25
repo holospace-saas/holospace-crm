@@ -99,7 +99,7 @@ export async function GET(req: NextRequest): Promise<Response> {
   const authz = await requireRole("agent", { requestId, resource: "metrics" });
   if (!authz.ok) return authz.response;
   const { org: activeOrg, user } = authz;
-  const idioma = normalizarIdioma(user.locale);
+  const idioma = user.idioma;
   const t = (texto: string) => traduzir(texto, idioma);
 
   const url = new URL(req.url);

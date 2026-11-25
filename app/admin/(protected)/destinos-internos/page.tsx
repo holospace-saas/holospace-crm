@@ -5,8 +5,9 @@ import { estadoDosDestinosInternos } from "@/lib/automation/destinos-internos-au
 import { traduzir } from "@/lib/i18n/dicionario";
 
 import { FormularioDeDestinosInternos } from "./_form";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Destinos internos" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Destinos internos"));
 export const dynamic = "force-dynamic";
 
 /**

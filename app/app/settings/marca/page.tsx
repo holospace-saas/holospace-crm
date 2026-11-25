@@ -39,8 +39,9 @@ import { createClient } from "@/lib/supabase/server";
 import { traduzir } from "@/lib/i18n/dicionario";
 
 import { FormularioDaMarcaDaOrganizacao } from "./_form";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Marca" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Marca"));
 export const dynamic = "force-dynamic";
 
 export default async function MarcaDaOrganizacaoPage() {

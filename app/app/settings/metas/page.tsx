@@ -23,8 +23,9 @@ import { mesLocal } from "@/lib/metas/periodo";
 import { createClient } from "@/lib/supabase/server";
 
 import { FormularioDaMeta } from "./_form";
+import { tituloDaTelaDoApp } from "@/lib/i18n/titulo-da-tela-do-app";
 
-export const metadata = { title: "Meta de vendas" };
+export const generateMetadata = () => tituloDaTelaDoApp((t) => t("Meta de vendas"));
 export const dynamic = "force-dynamic";
 
 export default async function MetaDeVendasPage() {
