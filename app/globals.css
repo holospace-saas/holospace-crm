@@ -226,7 +226,7 @@
   --agenda-pessoa-5: #0b7a9a; /* azul */
   --agenda-pessoa-6: #608bda; /* índigo */
   --agenda-pessoa-7: #7b5bad; /* violeta */
-  --agenda-pessoa-8: #cc77b1; /* framboesa */
+  --agenda-pessoa-8: #c673ac; /* framboesa */
 }
 
 /* ─────────────────────────────────────────────────────────────────────────
@@ -336,7 +336,7 @@
   --agenda-pessoa-5: #0b7a9a; /* azul */
   --agenda-pessoa-6: #608bda; /* índigo */
   --agenda-pessoa-7: #7b5bad; /* violeta */
-  --agenda-pessoa-8: #cc77b1; /* framboesa */
+  --agenda-pessoa-8: #c673ac; /* framboesa */
 }
 
 [data-theme="dark"] {
