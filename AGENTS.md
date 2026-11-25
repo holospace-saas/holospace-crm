@@ -342,12 +342,11 @@ server; segredo em query string; `throw` cru na borda da API.
   `docs/runbooks/deploy.md` §5.
 - **Env vars** — nova variável entra em `.env.example` **e** em `lib/env.ts`. Nunca leia nem logue
   valor de `.env*`; só `.env.example` é template. Segredo/token só em header, nunca em query string.
-- **Gerados — não edite** — `lib/database.types.ts`, `graphify-out/`, `pnpm-lock.yaml`, `.next/`.
+- **Gerados — não edite** — `lib/database.types.ts`, `pnpm-lock.yaml`, `.next/`.
 
 ## Testing & QA
 
 - `lib/database.types.ts` (gerado do schema Supabase — o tamanho de hoje sai de `wc -l lib/database.types.ts`)
-- `graphify-out/` (grafo de conhecimento local; ignorado pelo git e **ausente num clone fresco** — só existe depois de rodar `/graphify .`)
 - `pnpm-lock.yaml`, `tsconfig.tsbuildinfo`, `next-env.d.ts`, `.next/`
 | Camada                        | Comando              | O que cobre                                                                    |
 | ----------------------------- | -------------------- | ------------------------------------------------------------------------------ |

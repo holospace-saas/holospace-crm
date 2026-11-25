@@ -186,13 +186,6 @@ de produção num repositório público (#638). O gate que impede a volta é
 - [`../loop/`](../loop/) — máquina do gov-loop (`LOOP.md`, `CHECKPOINT.md`, `checkpoints/G1..G6-report.md` + `.approved`)
 - [`../tasks/todo.md`](../tasks/todo.md) — workflow de construção original (Fase 0 → PRD → specs)
 
-## 9. Grafo de conhecimento
-
-`graphify-out/` — grafo do repositório (7310 nós, 17705 arestas, 538 comunidades na última
-geração). Consulte via skill `graphify` antes de varrer código bruto. `GRAPH_REPORT.md` traz
-god nodes, hyperedges e comunidades. **Gerado — não editar.** ⚠️ Foi gerado contra uma árvore
-anterior à v1.0.0; regenere (`/graphify .`) antes de confiar em detalhe fino.
-
 ---
 
 ## Lacunas conhecidas deste índice
