@@ -140,7 +140,7 @@ O teste para admitir um invariante novo: **é possível escrever a verificação
 |---|---|---|
 | Mentalidade | Skill `sistema-vivo` | Injeta o checklist em toda feature |
 | Gate de sessão | Item "Living System Checklist" no DoD (`CLAUDE.md`) | Nenhuma task fecha sem responder |
-| Mapa vivo | `docs/architecture/` + `graphify-out/` | Peça nova aparece com ≥2 arestas |
+| Mapa vivo | `docs/architecture/` | Peça nova aparece com ≥2 arestas |
 | CI (mecânico) | `tests/unit/navegacao-completude.test.ts` | Tela sem porta reprova o build |
 
 **Estado por invariante:**

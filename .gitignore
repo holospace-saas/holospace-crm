@@ -119,9 +119,6 @@ loop/STOP
 loop/run-session.sh
 .superpowers/
 
-# graphify (análise local de knowledge graph)
-graphify-out/
-
 # Lockfiles de OUTRO gerenciador. O `pnpm-lock.yaml` é o único versionado, e
 # não é preferência de estilo: os pisos de segurança do projeto vivem em
 # `pnpm.overrides` do package.json, que o npm e o bun NÃO leem. Um `bun install`

@@ -126,12 +126,11 @@ Uma feature que responde "nenhum" a *quem eu alimento* ou *onde apareço na tela
 
 ## O mapa vivo é parte do sistema
 
-A doutrina só é navegável e monitorável se materializada visualmente. Dois artefatos mantêm o sistema legível:
+A doutrina só é navegável e monitorável se materializada visualmente. O artefato que mantém o sistema legível:
 
 - **archify** (`docs/architecture/`) — diagramas curados de sistema, turno do agente e flywheel. **Fonte da verdade = os `.json`, e é só neles que se mexe.** Uma peça nova entra no mapa **com ≥2 arestas** antes do merge, e `tests/unit/mapas-de-arquitetura.test.ts` verifica a coerência interna de todos eles.
 
   > ⚠️ **NÃO "re-renderize com archify".** Esta linha mandava fazer isso e a instrução era falsa: medido com archify 2.11.0, **só `agent-turn.workflow.json` valida**. Os `*.architecture.json` são recusados nos dois modos — os `node.type` que usamos estão fora do enum, vários `col` passam de 5, e os `dot` dos cards também. Quem seguisse a instrução receberia erro de schema e concluiria que estragou algo. Detalhe medido em [`../architecture/README.md`](../architecture/README.md).
-- **graphify** (`graphify-out/`) — grafo determinístico do repo inteiro (nós, comunidades, arestas). Use `graphify query "<pergunta>"` para achar ilhas e orientar antes de ler fontes.
 
 Regra: **mudança de arquitetura não fecha sem o mapa refletir.** O diagrama desatualizado é uma ilha de informação — viola o invariante 3.
 
@@ -165,7 +164,7 @@ Primeira passada ancorada no grafo (`graphify`) + `docs/architecture/`. A doutri
 | Mentalidade | Skill `sistema-vivo` (`.claude/skills/`) | Injeta o checklist em toda feature/refactor |
 | Gate de sessão | Item "Living System Checklist" no DoD (`CLAUDE.md`) | Nenhuma task fecha sem responder o checklist |
 | Contexto persistente | Memória de projeto | Sessões futuras carregam a doutrina |
-| Mapa vivo | archify + graphify | Peça nova aparece com ≥2 arestas |
+| Mapa vivo | archify (`docs/architecture/`) | Peça nova aparece com ≥2 arestas |
 | **CI (mecânico)** | `tests/unit/navegacao-completude.test.ts` | **Tela sem porta reprova o build** |
 
 **Rung futuro (opcional, não construído):** enforcement mecânico via CI/hook — ex.: teste que exige que toda tabela tenant-aware nova declare sua estratégia de activity log. Gates de *mentalidade* vivem melhor em skill+DoD (hábito) do que em hook frágil (ruído). Adicionar só se a doutrina começar a vazar na prática.
